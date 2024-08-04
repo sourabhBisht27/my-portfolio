@@ -88,7 +88,7 @@ p {
 }
 
 .header {
-  background-color: #009688;
+  background-color: var(--secondary-clr);
   display: flex;
   justify-content: space-between;
   padding: 1em;
@@ -104,6 +104,11 @@ p {
 .hero-container {
   background-color: var(--secondary-clr);
   color: var(--text-clr-2);
+}
+
+.hero-container img {
+  max-width: 100%;
+  height: auto;
 }
 
 .main {
