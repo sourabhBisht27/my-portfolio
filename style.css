@@ -68,7 +68,7 @@ p {
 .nav-list li {
   font-weight: 400;
   cursor: pointer;
-  background-color: var(--btn-clr);
+  background-color: #45474b;
   border-radius: 5px;
   padding: 6px 10px;
   margin-left: 0.8em;
