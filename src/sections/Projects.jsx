@@ -10,7 +10,7 @@ const projects = [
     title: "EXTracker",
     description:
       "A fullstack app to track daily expenses and incomes with charts and reports.",
-    image: "./src/assets/images/project-1.png",
+    image: "images/project-1.png",
     github: "https://github.com/sourabhBisht27/expense-tracker",
     demo: "https://expense-tracker-yjwc.onrender.com/auth",
   },
@@ -18,7 +18,7 @@ const projects = [
     title: "Thoughts Trail",
     description:
       "A MERN blogging platform with authentication, likes, and comments.",
-    image: "./src/assets/images/project-2.png",
+    image: "/images/project-2.png",
     github: "https://github.com/Atuldubey98/thought_trail",
     demo: "https://blogging-demo.vercel.app/",
   },
@@ -26,7 +26,7 @@ const projects = [
     title: "Task Tracker",
     description:
       "A simple yet powerful todo manager with categories and due dates.",
-    image: "./src/assets/images/project-3.jpeg",
+    image: "/images/project-3.jpeg",
     github: "https://github.com/sourabhBisht27/Task-Tracker",
     demo: "https://todo-demo.vercel.app/",
   },
@@ -34,7 +34,7 @@ const projects = [
     title: "Movie Search",
     description:
       "Look for your favourite movies something we all adore, worth dying for.",
-    image: "./src/assets/images/project-4.jpeg",
+    image: "/images/project-4.jpeg",
     github: "https://github.com/sourabhBisht27/movie_search",
     demo: "https://movie-search-pi-seven.vercel.app/",
   },
@@ -42,7 +42,7 @@ const projects = [
     title: "Mojito Wrld",
     description:
       "A Landing page for amazing mojito's something we all adore, worth dying for.",
-    image: "./src/assets/images/project-5.png",
+    image: "/images/project-5.png",
     github: "https://github.com/sourabhBisht27/cocktails",
     demo: "https://cocktails-umber.vercel.app/",
   },

@@ -10,7 +10,7 @@ export default function Hero() {
       className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white px-20"
     >
       <motion.img
-        src="./src/assets/images/tanjiro-img.jpeg"
+        src="/images/tanjiro-img.jpeg"
         alt="Profile"
         className="w-40 h-40 rounded-full object-cover shadow-xl mb-6 border-2 border-gray-500/50"
         initial={{ opacity: 0, scale: 0.8, y: 20 }}
