@@ -10,7 +10,7 @@ const projects = [
     title: "EXTracker",
     description:
       "A fullstack app to track daily expenses and incomes with charts and reports.",
-    image: "images/project-1.png",
+    image: "/images/project-1.png",
     github: "https://github.com/sourabhBisht27/expense-tracker",
     demo: "https://expense-tracker-yjwc.onrender.com/auth",
   },
@@ -52,19 +52,23 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="px-20 md:px-20 py-20 bg-gradient-to-b from-gray-950 to-gray-900 text-gray-100"
+      className="px-6 sm:px-10 md:px-20 py-16 bg-gradient-to-b from-gray-950 to-gray-900 text-gray-100"
     >
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+      <h2
+        className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 
+      bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+      >
         My Projects
       </h2>
 
       <Swiper
         modules={[Navigation, Autoplay]}
-        spaceBetween={30}
+        spaceBetween={20}
         slidesPerView={1}
         navigation
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         breakpoints={{
+          640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}

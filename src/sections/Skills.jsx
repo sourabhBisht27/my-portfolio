@@ -47,7 +47,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="px-20 md:px-20 py-20 bg-gradient-to-b from-gray-900 to-gray-950 text-gray-100"
+      className="px-4 sm:px-8 md:px-20 py-20 bg-gradient-to-b from-gray-900 to-gray-950 text-gray-100"
     >
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
         ⚡ Skills
@@ -65,7 +65,7 @@ export default function Skills() {
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-              className="text-5xl"
+              className="text-5xl cursor-pointer"
             >
               {skill.icon}
             </motion.div>

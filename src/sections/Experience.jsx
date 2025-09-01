@@ -31,12 +31,10 @@ export default function Experience() {
     },
   ];
 
-  // Variants for stagger + fade-up
+  // Motion variants
   const container = {
     hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.25 },
-    },
+    visible: { transition: { staggerChildren: 0.25 } },
   };
 
   const fadeUp = {
@@ -44,7 +42,7 @@ export default function Experience() {
     visible: { opacity: 1, y: 0 },
   };
 
-  // Scroll animation for line
+  // Scroll animation for vertical timeline line
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -56,17 +54,24 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative px-20 md:px-20 py-20 bg-gradient-to-b from-gray-900 to-gray-950 text-gray-100"
+      className="px-6 sm:px-10 md:px-20 relative py-16 
+      bg-gradient-to-b from-gray-900 to-gray-950 text-gray-100"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-        {/* Left-side illustration */}
+        {/* Left Illustration */}
         <div className="hidden md:flex justify-center">
-          <Lottie animationData={aniDev} />
+          <Lottie
+            animationData={aniDev}
+            className="w-72"
+          />
         </div>
 
         {/* Timeline */}
         <div className="md:col-span-2">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 
+          bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+          >
             Experience
           </h2>
 
@@ -74,10 +79,13 @@ export default function Experience() {
             ref={ref}
             className="relative pl-8"
           >
+            {/* Timeline line */}
             <motion.div
               className="absolute left-0 top-0 w-[2px] h-full bg-gray-700 origin-top"
               style={{ scaleY: lineScale }}
             />
+
+            {/* Experience items */}
             <motion.div
               className="space-y-12"
               variants={container}
@@ -89,9 +97,13 @@ export default function Experience() {
                 <motion.div
                   key={index}
                   variants={fadeUp}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeOut",
+                  }}
                   className="relative pl-8"
                 >
+                  {/* Dot */}
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
@@ -104,11 +116,17 @@ export default function Experience() {
                     }}
                     className={`absolute top-1.5 -left-[9px] w-4 h-4 ${exp.dotColor} rounded-full border-2 border-gray-900`}
                   />
-                  <h3 className="text-xl font-semibold">{exp.role}</h3>
-                  <span className="text-sm text-gray-400">
+
+                  {/* Role & Company */}
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">
+                    {exp.role}
+                  </h3>
+                  <span className="text-sm text-gray-400 block mb-2">
                     {exp.company} • {exp.date}
                   </span>
-                  <ul className="mt-2 list-disc list-inside text-gray-300 space-y-1">
+
+                  {/* Bullet points hidden on mobile */}
+                  <ul className="hidden sm:block mt-2 list-disc list-inside text-gray-300 space-y-1">
                     {exp.points.map((point, i) => (
                       <li key={i}>{point}</li>
                     ))}

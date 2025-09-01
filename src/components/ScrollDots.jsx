@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const sections = ["hero", "about", "experience", "projects", "contact"];
 
 export default function ScrollDots() {
-  const [active, setActive] = useState("home");
+  const [active, setActive] = useState("hero");
 
   // Detect current section in view
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function ScrollDots() {
   }, []);
 
   return (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50">
+    <div className="hidden sm:flex transform space-y-1 fixed right-6 top-1/2 -translate-y-1/2 flex-col gap-4 z-50">
       {sections.map((id) => (
         <a
           key={id}
