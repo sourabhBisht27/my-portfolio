@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import ContactForm from "../components/ContactForm";
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="px-6 sm:px-10 md:px-20 py-16 bg-gray-900 text-white"
+      className="relative overflow-hidden px-6 sm:px-10 md:px-20 py-20 bg-gradient-to-b from-gray-900 to-gray-950 text-white"
     >
+      {/* Background glowing orbs */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-10 left-10 w-40 h-40 bg-purple-600/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-pink-600/20 rounded-full blur-3xl animate-bounce"></div>
+      </div>
+
       <div className="max-w-4xl mx-auto text-center">
         {/* Heading */}
         <motion.h2
@@ -68,50 +75,62 @@ export default function Contact() {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition"
+              className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition relative group"
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
             >
+              {/* Hover glow ring */}
+              <span className="absolute inset-0 rounded-full bg-purple-500/40 blur-md opacity-0 group-hover:opacity-100 transition"></span>
               {item.icon}
             </motion.a>
           ))}
         </motion.div>
 
-        {/* Contact Form */}
-        <motion.form
-          className="space-y-6 max-w-xl mx-auto text-left"
+        {/* Contact Form (reusable, styled here) */}
+        <motion.div
+          className="max-w-xl mx-auto"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full p-4 rounded-xl bg-gray-800 text-white 
-            focus:outline-none focus:ring-2 focus:ring-purple-500 text-base sm:text-lg"
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full p-4 rounded-xl bg-gray-800 text-white 
-            focus:outline-none focus:ring-2 focus:ring-purple-500 text-base sm:text-lg"
-          />
-          <textarea
-            placeholder="Your Message"
-            rows="4"
-            className="w-full p-4 rounded-xl bg-gray-800 text-white 
-            focus:outline-none focus:ring-2 focus:ring-purple-500 text-base sm:text-lg"
-          />
-          <motion.button
-            type="submit"
-            className="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 
-            font-semibold transition shadow-lg text-base sm:text-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Send Message
-          </motion.button>
-        </motion.form>
+          <ContactForm>
+            {({ registerField }) => (
+              <div className="space-y-6 text-left">
+                <input
+                  {...registerField("user_name")}
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full p-4 rounded-xl bg-gray-800 text-white 
+                  focus:outline-none focus:ring-2 focus:ring-purple-500 text-base sm:text-lg transition-all duration-300"
+                />
+                <input
+                  {...registerField("user_email")}
+                  type="email"
+                  placeholder="Your Email"
+                  className="w-full p-4 rounded-xl bg-gray-800 text-white 
+                  focus:outline-none focus:ring-2 focus:ring-purple-500 text-base sm:text-lg transition-all duration-300"
+                />
+                <textarea
+                  {...registerField("message")}
+                  placeholder="Your Message"
+                  rows="4"
+                  className="w-full p-4 rounded-xl bg-gray-800 text-white 
+                  focus:outline-none focus:ring-2 focus:ring-purple-500 text-base sm:text-lg transition-all duration-300"
+                />
+                <motion.button
+                  type="submit"
+                  className="relative w-full py-3 rounded-xl bg-purple-600 overflow-hidden font-semibold text-base sm:text-lg shadow-lg"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {/* Shimmer effect */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 animate-[shimmer_2.5s_infinite] bg-[length:200%_100%] opacity-20"></span>
+                  <span className="relative z-10">Send Message</span>
+                </motion.button>
+              </div>
+            )}
+          </ContactForm>
+        </motion.div>
       </div>
     </section>
   );

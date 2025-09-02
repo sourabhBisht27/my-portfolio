@@ -1,6 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Lottie from "lottie-react";
+import { Briefcase } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import aniDev from "../assets/hero-dev.json";
 
 export default function Experience() {
@@ -23,7 +25,7 @@ export default function Experience() {
       date: "Jan 2024 - Jun 2024",
       points: [
         "Developed a responsive website optimized for desktop and mobile.",
-        "Designed an interactive feature increasing user interactions by 300 per week.",
+        "Designed an interactive feature increasing user interactions by 300+ per week.",
         "Integrated third-party APIs for payment processing and account management.",
         "Collaborated with cross-functional teams across five client projects.",
       ],
@@ -54,26 +56,31 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="px-6 sm:px-10 md:px-20 relative py-16 
-      bg-gradient-to-b from-gray-900 to-gray-950 text-gray-100"
+      className="px-6 sm:px-10 md:px-20 relative py-20 
+      bg-gradient-to-b from-gray-900 via-gray-950 to-black text-gray-100"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Left Illustration */}
         <div className="hidden md:flex justify-center">
           <Lottie
             animationData={aniDev}
-            className="w-72"
+            className="w-64 lg:w-72"
+            loop
           />
         </div>
 
         {/* Timeline */}
         <div className="md:col-span-2">
-          <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 
-          bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
-          >
-            Experience
-          </h2>
+          {/* Section Heading */}
+          <div className="flex items-center gap-3 mb-12 justify-center md:justify-start">
+            <Briefcase className="w-8 h-8 text-indigo-400" />
+            <h2
+              className="text-3xl sm:text-4xl md:text-5xl font-bold 
+              bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent"
+            >
+              Experience
+            </h2>
+          </div>
 
           <div
             ref={ref}
@@ -97,10 +104,7 @@ export default function Experience() {
                 <motion.div
                   key={index}
                   variants={fadeUp}
-                  transition={{
-                    duration: 0.6,
-                    ease: "easeOut",
-                  }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                   className="relative pl-8"
                 >
                   {/* Dot */}
@@ -114,21 +118,27 @@ export default function Experience() {
                       damping: 20,
                       delay: 0.2,
                     }}
-                    className={`absolute top-1.5 -left-[9px] w-4 h-4 ${exp.dotColor} rounded-full border-2 border-gray-900`}
+                    className={`absolute top-1.5 -left-[9px] w-4 h-4 ${exp.dotColor} rounded-full border-2 border-gray-900 shadow-lg`}
                   />
 
                   {/* Role & Company */}
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
                     {exp.role}
                   </h3>
-                  <span className="text-sm text-gray-400 block mb-2">
+                  <span className="text-sm text-gray-400 block mb-3">
                     {exp.company} • {exp.date}
                   </span>
 
-                  {/* Bullet points hidden on mobile */}
-                  <ul className="hidden sm:block mt-2 list-disc list-inside text-gray-300 space-y-1">
+                  {/* Points with icons (hidden on mobile) */}
+                  <ul className="hidden sm:block mt-2 space-y-2 text-gray-300">
                     {exp.points.map((point, i) => (
-                      <li key={i}>{point}</li>
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-base leading-relaxed"
+                      >
+                        <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-1 flex-shrink-0" />
+                        {point}
+                      </li>
                     ))}
                   </ul>
                 </motion.div>

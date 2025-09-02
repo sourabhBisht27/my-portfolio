@@ -60,16 +60,26 @@ export default function Skills() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.6 }}
-            className="flex flex-col items-center gap-2"
+            className="relative flex flex-col items-center gap-3 group"
           >
+            {/* Floating sparkles */}
+            <span className="absolute -top-2 -left-2 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping"></span>
+            <span className="absolute top-1 right-0 w-1.5 h-1.5 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce"></span>
+            <span className="absolute bottom-2 left-1 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse"></span>
+
+            {/* Icon with hover glow + float animation */}
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-              className="text-5xl cursor-pointer"
+              className="text-5xl cursor-pointer transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(167,139,250,0.7)]"
             >
               {skill.icon}
             </motion.div>
-            <span className="text-sm">{skill.name}</span>
+
+            {/* Skill name with hover accent */}
+            <span className="text-sm transition-colors duration-300 group-hover:text-purple-400">
+              {skill.name}
+            </span>
           </motion.div>
         ))}
       </div>

@@ -4,6 +4,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import ProjectCard from "../components/ProjectCard";
+import { FolderKanban } from "lucide-react";
 
 const projects = [
   {
@@ -33,7 +34,7 @@ const projects = [
   {
     title: "Movie Search",
     description:
-      "Look for your favourite movies something we all adore, worth dying for.",
+      "Look for your favourite movies something worth binge watching and staying up late for.",
     image: "/images/project-4.jpeg",
     github: "https://github.com/sourabhBisht27/movie_search",
     demo: "https://movie-search-pi-seven.vercel.app/",
@@ -41,7 +42,7 @@ const projects = [
   {
     title: "Mojito Wrld",
     description:
-      "A Landing page for amazing mojito's something we all adore, worth dying for.",
+      "A Landing page for amazing mojito's something worth paying your time to.",
     image: "/images/project-5.png",
     github: "https://github.com/sourabhBisht27/cocktails",
     demo: "https://cocktails-umber.vercel.app/",
@@ -54,19 +55,21 @@ const Projects = () => {
       id="projects"
       className="px-6 sm:px-10 md:px-20 py-16 bg-gradient-to-b from-gray-950 to-gray-900 text-gray-100"
     >
-      <h2
-        className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 
-      bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
-      >
-        My Projects
+      {/* Section Heading */}
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+        <FolderKanban className="w-8 h-8 text-cyan-400" />
+        <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+          My Projects
+        </span>
       </h2>
 
+      {/* Swiper Carousel */}
       <Swiper
         modules={[Navigation, Autoplay]}
-        spaceBetween={20}
+        spaceBetween={24}
         slidesPerView={1}
         navigation
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 3500, disableOnInteraction: false }}
         breakpoints={{
           640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
@@ -75,7 +78,11 @@ const Projects = () => {
       >
         {projects.map((project, index) => (
           <SwiperSlide key={index}>
-            <ProjectCard project={project} />
+            <div className="group relative h-full">
+              <ProjectCard project={project} />
+              {/* Glow effect on hover */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 blur-xl"></div>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
