@@ -12,6 +12,7 @@ export default function SocialLinks() {
     >
       <a
         href="https://github.com/sourabhBisht27"
+        aria-label="Github"
         target="_blank"
         rel="noopener noreferrer"
         className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 text-white shadow-lg transition transform hover:scale-110"
@@ -21,6 +22,7 @@ export default function SocialLinks() {
 
       <a
         href="https://linkedin.com/in/iamsourabh125"
+        aria-label="Linkedin"
         target="_blank"
         rel="noopener noreferrer"
         className="p-3 rounded-full bg-blue-700 hover:bg-blue-600 text-white shadow-lg transition transform hover:scale-110"
@@ -30,6 +32,7 @@ export default function SocialLinks() {
 
       <a
         href="https://twitter.com/yourprofile"
+        aria-label="Twitter"
         target="_blank"
         rel="noopener noreferrer"
         className="p-3 rounded-full bg-sky-500 hover:bg-sky-400 text-white shadow-lg transition transform hover:scale-110"
@@ -39,6 +42,7 @@ export default function SocialLinks() {
 
       <a
         href="https://instagram.com/nomore_sourabh/"
+        aria-label="Instagram"
         target="_blank"
         rel="noopener noreferrer"
         className="p-3 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 hover:opacity-90 text-white shadow-lg transition transform hover:scale-110"
