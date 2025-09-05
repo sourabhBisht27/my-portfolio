@@ -66,6 +66,7 @@ const Projects = () => {
       {/* Swiper Carousel */}
       <Swiper
         modules={[Navigation, Autoplay]}
+        lazy={true}
         spaceBetween={24}
         slidesPerView={1}
         navigation

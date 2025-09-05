@@ -29,7 +29,6 @@ const ContactForm = () => {
           formRef.current.reset();
         },
         (error) => {
-          console.error(error.text);
           setMessage("❌ Something went wrong. Please try again.");
           setIsSending(false);
           //   setMessage("Send Message");

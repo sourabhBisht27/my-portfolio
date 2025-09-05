@@ -43,7 +43,7 @@ const Hero = () => {
             href="https://drive.google.com/file/d/1mC5d4s8yjdRynrhgWFTPeApb9ds6WfVZ/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-2xl text-blue-600 border border-blue-600 hover:bg-blue-50 dark:hover:bg-gray-800 shadow-lg transition"
+            className="px-6 py-3 rounded-2xl text-blue-700 dark:text-blue-400 border border-blue-600 hover:bg-blue-100 dark:hover:bg-gray-700 shadow-lg transition"
           >
             View Resume
           </a>
@@ -61,7 +61,7 @@ const Hero = () => {
           <div className="absolute inset-0 rounded-full md:rounded-2xl bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 opacity-70 blur-2xl animate-pulse"></div>
           <img
             src="/images/tanjiro-img.jpeg"
-            alt="Sourabh"
+            alt="sourabh_img"
             className="relative w-48 h-48 md:w-80 md:h-80 object-cover rounded-full md:rounded-2xl shadow-xl ring-2 ring-white/20 group-hover:shadow-blue-500/40 transition duration-500"
           />
         </div>

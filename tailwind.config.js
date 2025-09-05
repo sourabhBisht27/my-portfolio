@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: "class", // enables toggling with .dark class on <html> or <body>
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -12,7 +12,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui"], // example font
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
         heading: ["Poppins", "ui-sans-serif"],
       },
       animation: {

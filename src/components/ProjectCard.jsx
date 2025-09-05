@@ -12,6 +12,7 @@ const ProjectCard = ({ project }) => {
       <img
         src={project.image}
         alt={project.title}
+        loading="lazy"
         className="w-full h-40 sm:h-48 object-cover group-hover:brightness-110 transition duration-300"
       />
 
